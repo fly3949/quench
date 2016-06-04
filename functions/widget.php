@@ -63,5 +63,6 @@ include (TEMPLATEPATH . '/functions/widgets/post.php');
 include (TEMPLATEPATH . '/functions/widgets/readers.php');
 include (TEMPLATEPATH . '/functions/widgets/search.php');
 include (TEMPLATEPATH . '/functions/widgets/tags.php');
+include (TEMPLATEPATH . '/functions/widgets/customer.php');
 
 ?>
