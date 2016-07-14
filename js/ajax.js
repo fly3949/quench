@@ -183,8 +183,10 @@ function ajaxreload_code() {
     try{
     	init();
     } catch (e) {}
-    if (typeof DUOSHUO !== 'undefined')
+    if (typeof DUOSHUO !== 'undefined'){
         DUOSHUO.EmbedThread('.ds-thread');
+        ybq();
+    };
     if( window.hermitjs !== undefined )
 		hermitjs.reload(0); //默认方式, 会打断播放状态
 }
