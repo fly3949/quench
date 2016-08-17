@@ -141,7 +141,7 @@ textarea, input {
     color: #fff
 }
 body {
-    font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "WenQuanYi Micro Hei", Verdana, Aril, "Lantinghei SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
     font-size: 0.875rem;
     background-color: #eee;
     background-image: url('images/bg.jpg');
