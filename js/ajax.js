@@ -27,7 +27,7 @@ window.onpopstate = function(event) {
 };
 
 function ajaxloadPageInit(scope) {
-    jQuery(scope + "a").click(function(event) {
+    jQuery( document ).on( 'click', scope + "a", function (event) {
         if (this.href.indexOf(ajax.home) >= 0 && this.href.indexOf(ajax.home) < 20 && ajaxcheck_ignore(this.href) == true) {
             event.preventDefault();
             this.blur();
@@ -59,7 +59,7 @@ function ajaxloadPage(url, push, getData) {
         if (ajaxscroll_top == true) {
             jQuery('html,body').animate({
                 scrollTop: 0
-            }, 1500);
+            }, 500);
         }
         ajaxisLoad = true;
         ajaxstarted = true;
@@ -78,8 +78,8 @@ function ajaxloadPage(url, push, getData) {
         }
         if (!jQuery('#' + ajaxcontent)) {}
         jQuery('body').append(ajaxloading_code);
-        jQuery('#' + ajaxcontent).fadeTo("slow", 0.4, function() {
-            jQuery('#' + ajaxcontent).fadeIn("slow", function() {
+        jQuery('#' + ajaxcontent).fadeTo("fast", 0.4, function() {
+            jQuery('#' + ajaxcontent).fadeIn("fast", function() {
                 jQuery.ajax({
                     type: "GET",
                     url: url,
@@ -146,7 +146,7 @@ function ajaxloadPage(url, push, getData) {
                         jQuery('#' + ajaxcontent).hide();
                         jQuery('#' + ajaxcontent).css("position", "");
                         jQuery('#' + ajaxcontent).css("left", "");
-                        jQuery('#' + ajaxcontent).fadeTo("slow", 1, function() {});
+                        jQuery('#' + ajaxcontent).fadeTo("fast", 1, function() {});
                         jQuery('.spinner').remove();
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -201,3 +201,7 @@ function ajaxclick_code(thiss) {
 }
 
 function ajaxdata_code(dataa) {}
+
+$("#recentcomments").bind('DOMNodeInserted', function (e) {
+    ajaxloadPageInit("#recentcomments ");
+});//解决侧栏多说评论无法 PJAX 的问题
